@@ -1,0 +1,500 @@
+/* 
+.home {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.hero {
+  height: 90vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+
+.hero-content {
+  max-width: 600px;
+  color: white;
+  animation: slideIn 1.2s ease;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.primary-btn {
+  padding: 12px 28px;
+  background: gold;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.primary-btn:hover {
+  background: black;
+  color: gold;
+  transform: scale(1.05);
+}
+
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 60px 40px;
+  background: #f9f9f9;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.about {
+  padding: 80px 40px;
+  background: black;
+  color: white;
+}
+
+.about-text {
+  max-width: 700px;
+}
+
+.secondary-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: transparent;
+  border: 2px solid gold;
+  color: gold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.secondary-btn:hover {
+  background: gold;
+  color: black;
+}
+
+
+.categories {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.category-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.category-card {
+  height: 220px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+.category-card:hover {
+  transform: scale(1.08);
+}
+
+.ring {
+  background: linear-gradient(to right, #000, #444);
+}
+.necklace {
+  background: linear-gradient(to right, #4b0000, #9c1a1a);
+}
+.earrings {
+  background: linear-gradient(to right, #2c2c2c, #6b6b6b);
+}
+.bracelet {
+  background: linear-gradient(to right, #3a2f00, #bfa100);
+}
+
+
+.cta {
+  padding: 80px 20px;
+  background: gold;
+  text-align: center;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero {
+    height: auto;
+    padding: 80px 20px;
+  }
+} */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --gold: #FFD700;
+  --dark-text: #222222;
+  --light-bg: #fffdf7;
+  --soft-grey: #f4f1ea;
+  --btn-hover: #e6c300;
+  --shadow-light: rgba(0,0,0,0.08);
+  --shadow-gold: rgba(255,215,0,0.3);
+}
+
+body {
+  margin: 0;
+  background-color: var(--light-bg);
+  font-family: 'Open Sans', sans-serif;
+  color: var(--dark-text);
+}
+
+.home {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem 2rem 4rem;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 0;
+  gap: 3rem;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.8rem;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  color: var(--dark-text);
+}
+
+.hero-text h1 span {
+  color: var(--gold);
+}
+
+.hero-text p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 5px 12px var(--shadow-gold);
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  border: none;
+  text-align: center;
+  color: var(--dark-text);
+  background-color: var(--gold);
+  border: 2px solid var(--gold);
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px var(--shadow-gold);
+}
+
+.primary-btn:hover {
+  background-color: #f5d93a;
+  border-color: #f5d93a;
+  color: var(--dark-text);
+}
+
+/* Fix secondary btn color & hover */
+.secondary-btn {
+  background-color: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+}
+
+.secondary-btn:hover {
+  background-color: var(--gold);
+  color: var(--dark-text);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px var(--shadow-gold);
+}
+
+/* Hero Image */
+.hero-image {
+  flex: 1;
+  height: 420px;
+  border-radius: 12px;
+  background-image: url('https://zariyajewellery.in/cdn/shop/files/Moissanite_diamond_statement_necklace_for_women.jpg?v=1740825458');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 6px 25px var(--shadow-gold);
+  transition: transform 0.4s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+}
+
+/* FEATURES */
+/* Fix grid layout: 2x2 grid */
+.features {
+  margin: 4rem 0 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  text-align: center;
+  animation: fadeInUp 1s ease 0.3s forwards;
+  opacity: 0;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow-light);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+.feature-card:hover {
+  box-shadow: 0 10px 20px var(--shadow-gold);
+  transform: translateY(-8px);
+}
+
+.feature-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.feature-card h3 {
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--dark-text);
+}
+
+.feature-card p {
+  color: #5a5a5a;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* COLLECTIONS */
+/* Bigger cards + text bottom aligned */
+.collections {
+  text-align: center;
+  margin-bottom: 5rem;
+  animation: fadeInUp 1s ease 0.6s forwards;
+  opacity: 0;
+}
+
+.collections h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-text);
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 0 0.5rem;
+}
+
+.collection-card {
+  display: flex;
+  align-items: flex-end; /* text at bottom */
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 15px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem; /* increased font size */
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 15px var(--shadow-light);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  height: 220px; /* increased height */
+}
+
+.collection-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px var(--shadow-gold);
+}
+
+/* Images for categories */
+.collection-card.rings {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiypJJ3bcbzOIor1H73i0K19i3OSVFWrLhwQ&s');
+}
+
+.collection-card.necklaces {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTibn1zpx5VsGd8-QYMf4lyjIb6pG6amQzC6Q&s');
+}
+
+.collection-card.earrings {
+  background-image: url('https://kameswarijewellers.in/wp-content/uploads/2023/04/DER18-501.jpg');
+}
+
+.collection-card.bracelets {
+  background-image: url('https://www.wamanharipethesons.com/portalrepository/images/product/WHPS281305_0_r.jpg');
+}
+
+/* CTA */
+.cta {
+  background-color: var(--gold);
+  padding: 3.5rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  color: var(--dark-text);
+  box-shadow: 0 0 30px var(--shadow-gold);
+  margin-bottom: 4rem;
+  animation: fadeInUp 1s ease 0.9s forwards;
+  opacity: 0;
+}
+
+.cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Fix CTA button hover */
+.cta .btn {
+  color: var(--dark-text);
+  border-color: var(--dark-text);
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.cta .btn:hover {
+  color: var(--gold);
+  background-color: var(--dark-text);
+  border-color: var(--dark-text);
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px var(--shadow-gold);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-image {
+    height: 280px;
+    margin-bottom: 2rem;
+  }
+
+  .collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  
+  /* Features grid to 1 column on smaller */
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem 0;
+  }
+}
