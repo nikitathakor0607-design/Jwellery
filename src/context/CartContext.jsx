@@ -1,25 +1,20 @@
-import React, { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 
-// Create context
 export const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
 
-  // Load cart from localStorage on mount
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCart(storedCart);
-  }, []);
-
-  // Update localStorage whenever cart changes
+  // Save cart in localStorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // Add item to cart
-  const addToCart = (product, quantity = 1) => {
+  const addToCart = (product, quantity) => {
     const existingItem = cart.find((item) => item.id === product.id);
+
     if (existingItem) {
       setCart(
         cart.map((item) =>
@@ -33,44 +28,48 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // Remove item from cart
-  const removeFromCart = (productId) => {
-    setCart(cart.filter((item) => item.id !== productId));
-  };
-
-  // Increment quantity
-  const incrementQuantity = (productId) => {
+  const incrementQuantity = (id) => {
     setCart(
       cart.map((item) =>
-        item.id === productId
+        item.id === id
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
     );
   };
 
-  // Decrement quantity
-  const decrementQuantity = (productId) => {
+  const decrementQuantity = (id) => {
     setCart(
       cart.map((item) =>
-        item.id === productId
-          ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
           : item
       )
     );
   };
 
-  // Calculate subtotal
-  const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const removeFromCart = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const subtotal = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
     <CartContext.Provider
       value={{
         cart,
         addToCart,
-        removeFromCart,
         incrementQuantity,
         decrementQuantity,
+        removeFromCart,
+        clearCart,
         subtotal,
       }}
     >
@@ -78,3 +77,5 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
+export default CartProvider;

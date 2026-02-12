@@ -1,25 +1,112 @@
+/* checkout.css */
+
 .checkout {
   padding: 60px 40px;
+  font-family: "Poppins", sans-serif;
+  background: #fdfdfd;
+  min-height: 100vh;
+}
+
+.checkout h1 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  color: black;
 }
 
 .checkout-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  gap: 50px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.billing,
+.payment {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.billing:hover,
+.payment:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.billing h2,
+.payment h2,
+.payment h3 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: black;
 }
 
 .billing input {
   display: block;
   width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
-.payment button {
-  margin-top: 20px;
+.billing input:focus {
+  border-color: gold;
+  box-shadow: 0 0 5px gold;
+  outline: none;
+}
+
+.payment label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.payment input[type="radio"] {
+  accent-color: gold;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.place-order {
+  margin-top: 25px;
+  width: 100%;
   background: black;
   color: gold;
-  padding: 12px;
+  padding: 15px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.place-order:hover {
+  background: gold;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout h1 {
+    font-size: 2.2rem;
+  }
 }
